@@ -35,7 +35,7 @@ def first_menu():
 
     intro = True
     pygame.mixer.init()
-    pygame.mixer.music.load('Assets/sounds/musics/Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+    pygame.mixer.music.load('Assets/sounds/Of Far Different Nature - 0 to 100 (CC-BY).ogg')
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.2)
 

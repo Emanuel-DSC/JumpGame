@@ -45,13 +45,6 @@ font_small = pygame.font.SysFont('Lucida Sans', 20)
 font_big = pygame.font.SysFont('Lucida Sans', 24)
 
 
-# musica de fundo
-def radio():
-    pygame.mixer.music.load('assets/sounds/musics/Of Far Different Nature - Just Do It (CC-BY).ogg')
-    pygame.mixer.music.set_volume(0.1)
-    pygame.mixer.music.play(-1, 0.0)
-
-
 # desenha linhas de checkpoint(troca de fundo) e as apaga depois
 def draw_checkpoints():
     if 1599 < score:
@@ -208,7 +201,7 @@ platform_group.add(platform)
 first_screen.first_menu()
 
 # musicas do jogo
-radio()
+audio.radio()
 
 # loop do jogo
 run = True
@@ -343,7 +336,7 @@ while run:
             green_line = pygame.image.load('assets/bg/1.png').convert_alpha()
             purple_line = pygame.image.load('assets/bg/2.png').convert_alpha()
             # reseta musica
-            radio()
+            audio.radio()
 
     # rotina de sincronização
     for event in pygame.event.get():
