@@ -12,8 +12,10 @@ platform_image = pygame.image.load('assets/platform/platform.png').convert_alpha
 # enemy spritesheet
 enemy_sheet_img = pygame.image.load('assets/enemy/blue.png').convert_alpha()
 enemy_sheet_img2 = pygame.image.load('assets/enemy/red.png').convert_alpha()
+enemy_sheet_img3 = pygame.image.load('assets/enemy/pink.png').convert_alpha()
 enemy_sheet = SpriteSheet(enemy_sheet_img)
 enemy_sheet2 = SpriteSheet(enemy_sheet_img2)
+enemy_sheet3 = SpriteSheet(enemy_sheet_img3)
 # portal spritesheet
 fan_sheet_img = pygame.image.load('assets/teleport/fan.png').convert_alpha()
 fan_sheet = SpriteSheet(fan_sheet_img)

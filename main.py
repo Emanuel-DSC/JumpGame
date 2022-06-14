@@ -249,6 +249,12 @@ while run:
                 enemy_group.remove(enemy)
                 enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet2, 1.5)
                 enemy_group.add(enemy)
+            elif score >= 3400:
+                enemy_group.remove(enemy)
+                enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet3, 1.5)
+                enemy_group.add(enemy)
+                # aumentar velocidade do meeteoro
+                enemy.direction = 3
         # elif score >= 3400:
 
         # atualiza inimigos
