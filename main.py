@@ -47,13 +47,13 @@ font_big = pygame.font.SysFont('Lucida Sans', 24)
 
 # desenha linhas de checkpoint(troca de fundo) e as apaga depois
 def draw_checkpoints():
-    if 1599 < score:
-        screen.blit(images.green_line, (20, score - 1899 + SCROLL_THRESH))
-        if 1950 < score:
+    if 3599 < score:
+        screen.blit(images.green_line, (20, score - 3899 + SCROLL_THRESH))
+        if 3950 < score:
             images.green_line.fill(colors.INVISIBLE)
-    if 3200 < score:
-        screen.blit(images.purple_line, (20, score - 3500 + SCROLL_THRESH))
-        if 3750 < score:
+    if 5200 < score:
+        screen.blit(images.purple_line, (20, score - 5500 + SCROLL_THRESH))
+        if 5750 < score:
             images.green_line.fill(colors.INVISIBLE)
 
 
@@ -69,11 +69,11 @@ def draw_bg(bg_scrolling):
     screen.blit(images.bg_image, (0, 0 + bg_scrolling))
     screen.blit(images.bg_image, (0, -600 + bg_scrolling))
 
-    if 1999 < score < 3500:
+    if 3999 < score < 5500:
         screen.blit(images.bg_image2, (0, 0 + bg_scrolling))
         screen.blit(images.bg_image2, (0, -600 + bg_scrolling))
 
-    elif score >= 3500:
+    elif score >= 5500:
         screen.blit(images.bg_image3, (0, 0 + bg_scrolling))
         screen.blit(images.bg_image3, (0, -600 + bg_scrolling))
 
@@ -231,7 +231,7 @@ while run:
             p_x = random.randint(0, SCREEN_WIDTH - p_w)
             p_y = platform.rect.y - random.randint(80, 120)
             p_type = random.randint(1, 2)
-            if p_type == 1 and score > 3000:
+            if p_type == 1 and score > 5400:
                 p_moving = True
             else:
                 p_moving = False
@@ -245,17 +245,21 @@ while run:
         if len(enemy_group) == 0 and score > 1100:
             enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet, 1.5)
             enemy_group.add(enemy)
-            if 1899 < score < 3400:
+            if 3899 < score < 5400:
                 enemy_group.remove(enemy)
                 enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet2, 1.5)
                 enemy_group.add(enemy)
-            elif score >= 3400:
+            elif 5400 < score < 9000:
                 enemy_group.remove(enemy)
                 enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet3, 1.5)
                 enemy_group.add(enemy)
+
+            elif score >= 9000:
+                enemy_group.remove(enemy)
+                enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet4, 1.5)
+                enemy_group.add(enemy)
                 # aumentar velocidade do meeteoro
-                enemy.direction = 3
-        # elif score >= 3400:
+                enemy.direction = 2
 
         # atualiza inimigos
         enemy_group.update(scroll, SCREEN_WIDTH)
@@ -264,11 +268,11 @@ while run:
         if len(fan_group) == 0 and score >= 1000:
             fan = Fan(SCREEN_WIDTH, 90, images.fan_sheet, 2.4)
             fan_group.add(fan)
-            if 1899 < score < 3400:
+            if 3899 < score < 5400:
                 fan_group.remove(fan)
                 fan = Fan(SCREEN_WIDTH, 90, images.fan_sheet2, 2.4)
                 fan_group.add(fan)
-            elif score >= 3400:
+            elif score >= 5400:
                 fan_group.remove(fan)
                 fan = Fan(SCREEN_WIDTH, 90, images.fan_sheet3, 2.4)
                 fan_group.add(fan)
@@ -330,7 +334,8 @@ while run:
             fade_counter = 0
             # reposiciona o personagem
             jumpy.rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT - 150)
-            # reseta inimigos                enemy_group.empty()
+            # reseta inimigos
+            enemy_group.empty()
             # reseta portal
             fan_group.empty()
             # reseta plataformas

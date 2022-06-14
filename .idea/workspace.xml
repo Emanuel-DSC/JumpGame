@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcae10e6-f057-473d-871d-b7be527ba6e4" name="Default Changelist" comment="Música aleatória no fundo do jogo. Troca ao morrer ou reiniciar o game">
+    <list default="true" id="dcae10e6-f057-473d-871d-b7be527ba6e4" name="Default Changelist" comment="Aumento de velocidade do inimigo de acordo com a pontuação">
+      <change afterPath="$PROJECT_DIR$/Assets/enemy/green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/enemy/white.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/high_score.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high_score.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/images.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -99,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655173102495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aumento de velocidade do inimigo de acordo com a pontuação">
+      <created>1655174836765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655174836765</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,11 +122,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Música aleatória no fundo do jogo. Troca ao morrer ou reiniciar o game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Música aleatória no fundo do jogo. Troca ao morrer ou reiniciar o game" />
+    <MESSAGE value="Aumento de velocidade do inimigo de acordo com a pontuação" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aumento de velocidade do inimigo de acordo com a pontuação" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="108" key="#Inspections" timestamp="1653936536672">
@@ -131,6 +143,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1651636969417" />
+    <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1655175780912">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1655175780912" />
     <state x="580" y="172" key="FileChooserDialogImpl" timestamp="1654213977376">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -143,45 +159,45 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="559" y="135" key="Github.UntrackedFilesDialog/0.0.1600.860@0.0.1600.860" timestamp="1654214091465" />
-    <state width="1579" height="237" key="GridCell.Tab.0.bottom" timestamp="1655174709582">
+    <state width="1579" height="237" key="GridCell.Tab.0.bottom" timestamp="1655189262986">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="237" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1655174709582" />
-    <state width="1579" height="237" key="GridCell.Tab.0.center" timestamp="1655174709582">
+    <state width="1579" height="237" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1655189262986" />
+    <state width="1579" height="237" key="GridCell.Tab.0.center" timestamp="1655189262986">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="237" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1655174709582" />
-    <state width="1579" height="237" key="GridCell.Tab.0.left" timestamp="1655174709582">
+    <state width="1579" height="237" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1655189262986" />
+    <state width="1579" height="237" key="GridCell.Tab.0.left" timestamp="1655189262986">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="237" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1655174709582" />
-    <state width="1579" height="237" key="GridCell.Tab.0.right" timestamp="1655174709582">
+    <state width="1579" height="237" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1655189262986" />
+    <state width="1579" height="237" key="GridCell.Tab.0.right" timestamp="1655189262986">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="237" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1655174709582" />
-    <state width="1579" height="276" key="GridCell.Tab.1.bottom" timestamp="1655174076062">
+    <state width="1579" height="237" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1655189262986" />
+    <state width="1579" height="276" key="GridCell.Tab.1.bottom" timestamp="1655177017535">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1655174076062" />
-    <state width="1579" height="276" key="GridCell.Tab.1.center" timestamp="1655174076062">
+    <state width="1579" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1655177017535" />
+    <state width="1579" height="276" key="GridCell.Tab.1.center" timestamp="1655177017535">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1655174076062" />
-    <state width="1579" height="276" key="GridCell.Tab.1.left" timestamp="1655174076062">
+    <state width="1579" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1655177017535" />
+    <state width="1579" height="276" key="GridCell.Tab.1.left" timestamp="1655177017535">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1655174076062" />
-    <state width="1579" height="276" key="GridCell.Tab.1.right" timestamp="1655174076062">
+    <state width="1579" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1655177017535" />
+    <state width="1579" height="276" key="GridCell.Tab.1.right" timestamp="1655177017535">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1655174076062" />
+    <state width="1579" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1655177017535" />
     <state x="301" y="75" key="SettingsEditor" timestamp="1650051021999">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1650051021999" />
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1655173107170">
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1655174838478">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1655173107170" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1655174838478" />
   </component>
 </project>
