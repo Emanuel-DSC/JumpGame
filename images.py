@@ -8,6 +8,7 @@ bg_image2 = pygame.image.load('assets/bg/bg2.png').convert_alpha()
 bg_image3 = pygame.image.load('assets/bg/bg3.png').convert_alpha()
 green_line = pygame.image.load('assets/bg/1.png').convert_alpha()
 purple_line = pygame.image.load('assets/bg/2.png').convert_alpha()
+credits_bg = pygame.image.load('assets/bg/credtis_bg.png').convert_alpha()
 platform_image = pygame.image.load('assets/platform/platform.png').convert_alpha()
 # enemy spritesheet
 enemy_sheet_img = pygame.image.load('assets/enemy/blue.png').convert_alpha()

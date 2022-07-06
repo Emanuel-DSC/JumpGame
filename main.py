@@ -54,14 +54,14 @@ def draw_checkpoints():
     if 5200 < score:
         screen.blit(images.purple_line, (20, score - 5500 + SCROLL_THRESH))
         if 5750 < score:
-            images.green_line.fill(colors.INVISIBLE)
+            images.purple_line.fill(colors.INVISIBLE)
 
 
 # painel de informacao
 def draw_panel():
     pygame.draw.rect(screen, colors.BLACK, (0, 0, SCREEN_WIDTH, 30))
     pygame.draw.line(screen, colors.WHITE, (0, 30), (SCREEN_WIDTH, 30), 2)
-    text.draw_text('SCORE: ' + str(score), font_small, colors.WHITE, 0, 0)
+    text.draw_text('PONTOS: ' + str(score), font_small, colors.WHITE, 0, 0)
 
 
 # plano de fundo
@@ -318,8 +318,8 @@ while run:
         screen.blit(game_over_screen_fade, (0, 0))
         pygame.mixer.music.fadeout(1000)
         text.draw_text('GAME OVER!', font_big, colors.WHITE, 130, 200)
-        text.draw_text('SCORE: ' + str(score), font_big, colors.WHITE, 130, 250)
-        text.draw_text('PRESS SPACE TO PLAY AGAIN', font_big, colors.WHITE, 40, 300)
+        text.draw_text('PONTUAÇÃO: ' + str(score), font_big, colors.WHITE, 120, 250)
+        text.draw_text('REINICIAR [ESPAÇO]', font_big, colors.WHITE, 100, 300)
         # atualiza pontuacao maxima
         if score > high_score:
             high_score = score

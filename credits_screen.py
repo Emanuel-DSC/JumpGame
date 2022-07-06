@@ -1,16 +1,15 @@
 import pygame
-import text
-import colors
 import images
+import first_screen
 import audio
-from time import sleep
+
 
 pygame.font.init()
 
 textMenu = pygame.font.Font('assets/menu/spaceship2100.ttf', 42)
 textMenu2 = pygame.font.Font('assets/menu/spaceship2100.ttf', 56)
-
-WHITE = (255, 255, 255)
+font_normal = pygame.font.SysFont('Lucida Sans', 20)
+font_small = pygame.font.SysFont('Lucida Sans', 15)
 
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
@@ -39,6 +38,18 @@ def credits_menu():
 
     while intro:
 
-        screen.fill(colors.BLACK)
+        screen.blit(images.credits_bg, (0, 0))
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    intro = False
+                    first_screen.first_menu()
+
+
         pygame.display.update()
         clock.tick(60)
