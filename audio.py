@@ -15,6 +15,8 @@ iniciarButton = pygame.mixer.Sound('assets/sounds/Execute_02.ogg')
 iniciarButton.set_volume(0.3)
 creditosButton = pygame.mixer.Sound('assets/sounds/Bleep_05.ogg')
 creditosButton.set_volume(0.3)
+points = pygame.mixer.Sound('assets/sounds/1up1.wav')
+points.set_volume(0.5)
 
 
 # musica de fundo

@@ -1,8 +1,6 @@
 import pygame
 import images
 import first_screen
-import audio
-
 
 pygame.font.init()
 

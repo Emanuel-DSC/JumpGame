@@ -33,6 +33,7 @@ bg_scroll = 0
 game_over = False
 score = 0
 fade_counter = 0
+aux = 0
 
 if os.path.exists('high_score.txt'):
     with open('high_score.txt', 'r') as file:
@@ -51,9 +52,9 @@ def draw_checkpoints():
         screen.blit(images.green_line, (20, score - 3899 + SCROLL_THRESH))
         if 3950 < score:
             images.green_line.fill(colors.INVISIBLE)
-    if 5200 < score:
+    if 7200 < score:
         screen.blit(images.purple_line, (20, score - 5500 + SCROLL_THRESH))
-        if 5750 < score:
+        if 7750 < score:
             images.purple_line.fill(colors.INVISIBLE)
 
 
@@ -69,11 +70,11 @@ def draw_bg(bg_scrolling):
     screen.blit(images.bg_image, (0, 0 + bg_scrolling))
     screen.blit(images.bg_image, (0, -600 + bg_scrolling))
 
-    if 3999 < score < 5500:
+    if 3999 < score < 7500:
         screen.blit(images.bg_image2, (0, 0 + bg_scrolling))
         screen.blit(images.bg_image2, (0, -600 + bg_scrolling))
 
-    elif score >= 5500:
+    elif score >= 7500:
         screen.blit(images.bg_image3, (0, 0 + bg_scrolling))
         screen.blit(images.bg_image3, (0, -600 + bg_scrolling))
 
@@ -83,8 +84,8 @@ class Player:
 
     def __init__(self, x, y):
         self.image = pygame.transform.scale(images.jumpy_image, (50, 50))
-        self.width = 22
-        self.height = 40
+        self.width = 12
+        self.height = 35
         self.rect = pygame.Rect(0, 0, self.width, self.height)
         self.rect.center = (x, y)
         self.vel_y = 0
@@ -231,7 +232,7 @@ while run:
             p_x = random.randint(0, SCREEN_WIDTH - p_w)
             p_y = platform.rect.y - random.randint(80, 120)
             p_type = random.randint(1, 2)
-            if p_type == 1 and score > 5400:
+            if p_type == 1 and score > 7400:
                 p_moving = True
             else:
                 p_moving = False
@@ -245,16 +246,16 @@ while run:
         if len(enemy_group) == 0 and score > 1100:
             enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet, 1.5)
             enemy_group.add(enemy)
-            if 3899 < score < 5400:
+            if 3899 < score < 7400:
                 enemy_group.remove(enemy)
                 enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet2, 1.5)
                 enemy_group.add(enemy)
-            elif 5400 < score < 9000:
+            elif 7400 < score < 10000:
                 enemy_group.remove(enemy)
                 enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet3, 1.5)
                 enemy_group.add(enemy)
 
-            elif score >= 9000:
+            elif score >= 10000:
                 enemy_group.remove(enemy)
                 enemy = Enemy(SCREEN_WIDTH, 120, images.enemy_sheet4, 1.5)
                 enemy_group.add(enemy)
@@ -268,11 +269,11 @@ while run:
         if len(fan_group) == 0 and score >= 1000:
             fan = Fan(SCREEN_WIDTH, 90, images.fan_sheet, 2.4)
             fan_group.add(fan)
-            if 3899 < score < 5400:
+            if 3899 < score < 7400:
                 fan_group.remove(fan)
                 fan = Fan(SCREEN_WIDTH, 90, images.fan_sheet2, 2.4)
                 fan_group.add(fan)
-            elif score >= 5400:
+            elif score >= 7400:
                 fan_group.remove(fan)
                 fan = Fan(SCREEN_WIDTH, 90, images.fan_sheet3, 2.4)
                 fan_group.add(fan)
@@ -283,6 +284,15 @@ while run:
         # atualiza placar
         if scroll > 0:
             score += scroll
+
+        # toca som a cada 1000 pontos
+        if 1000 < score < 1020:
+            audio.points.play()
+            aux = score
+        if 1000 <= score - aux <= 1020:
+            audio.points.play()
+            aux = score
+        print(score - aux)
 
         # desenha uma linha da pontuacao maxima anterior
         pygame.draw.line(screen, colors.WHITE, (0, score - high_score + SCROLL_THRESH),
@@ -332,6 +342,7 @@ while run:
             score = 0
             scroll = 0
             fade_counter = 0
+            aux = 0
             # reposiciona o personagem
             jumpy.rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT - 150)
             # reseta inimigos
