@@ -19,6 +19,7 @@ SCREEN_HEIGHT = 600
 # cria a janela
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('The Looping Jump')
+pygame.display.set_icon(images.jumpy_image)
 
 # fps
 clock = pygame.time.Clock()
@@ -292,7 +293,6 @@ while run:
         if 1000 <= score - aux <= 1020:
             audio.points.play()
             aux = score
-        print(score - aux)
 
         # desenha uma linha da pontuacao maxima anterior
         pygame.draw.line(screen, colors.WHITE, (0, score - high_score + SCROLL_THRESH),
