@@ -4,12 +4,14 @@ import colors
 import images
 import audio
 import credits_screen
+from sys import exit
 from time import sleep
 
+pygame.init()
 pygame.font.init()
 
-textMenu = pygame.font.Font('assets/menu/spaceship2100.ttf', 42)
-textMenu2 = pygame.font.Font('assets/menu/spaceship2100.ttf', 56)
+textMenu = pygame.font.Font(text.ff, 42)
+textMenu2 = pygame.font.Font(text.ff, 56)
 
 WHITE = (255, 255, 255)
 
@@ -35,7 +37,8 @@ def first_menu():
 
     intro = True
     pygame.mixer.init()
-    pygame.mixer.music.load('Assets/sounds/musics/Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+    im = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\musics\Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+    pygame.mixer.music.load(im)
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.2)
 
@@ -50,18 +53,20 @@ def first_menu():
         screen.blit(images.menu_button2, (b2_left, b2_top))
         pygame.draw.rect(screen, WHITE, [b3_left, b3_top, b3_width, b3_height])
         screen.blit(images.menu_button3, (b3_left, b3_top))
-        text.draw_text('The Looping', textMenu, colors.WHITE, 190, 50)
+        text.draw_text('The Looping', textMenu, colors.WHITE, 160, 50)
         text.draw_text('Jump', textMenu2, colors.WHITE, 230, 90)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                intro = False
                 pygame.quit()
-                quit()
+                exit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
+                    intro = False
                     pygame.quit()
-                    quit()
+                    exit()
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 w = pygame.mouse.get_pos()[0]
@@ -76,7 +81,7 @@ def first_menu():
                     pygame.mixer.music.unload()
                     intro = False
 
-                #vai para a pagina de creditos
+                # vai para a pagina de creditos
                 if b2_left < w < (b2_left + b2_width) and b2_top < z < (b2_top + b2_height):
                     pygame.mixer.music.fadeout(1000)
                     sleep(0.5)
@@ -88,25 +93,26 @@ def first_menu():
 
                 # fecha o jogo
                 if b3_left < w < (b3_left + b3_width) and b3_top < z < (b3_top + b3_height):
+                    intro = False
                     pygame.quit()
-                    quit()
+                    exit()
 
             mouse = pygame.mouse.get_pos()
 
             if b1_left + b1_width > mouse[0] > b1_left and b1_top + b1_height > mouse[1] > b1_top:
-                images.menu_button1 = pygame.image.load('assets/menu/iniciar_on.png').convert_alpha()
+                images.menu_button1 = images.menu_button4
             else:
-                images.menu_button1 = pygame.image.load('assets/menu/iniciar_off.png').convert_alpha()
+                images.menu_button1 = images.menu_button1aux
 
             if b2_left + b2_width > mouse[0] > b2_left and b2_top + b2_height > mouse[1] > b2_top:
-                images.menu_button2 = pygame.image.load('assets/menu/creditos_on.png').convert_alpha()
+                images.menu_button2 = images.menu_button5
             else:
-                images.menu_button2 = pygame.image.load('assets/menu/creditos_off.png').convert_alpha()
+                images.menu_button2 = images.menu_button2aux
 
             if b3_left + b3_width > mouse[0] > b3_left and b3_top + b3_height > mouse[1] > b3_top:
-                images.menu_button3 = pygame.image.load('assets/menu/sair_on.png').convert_alpha()
+                images.menu_button3 = images.menu_button6
             else:
-                images.menu_button3 = pygame.image.load('assets/menu/sair_off.png').convert_alpha()
+                images.menu_button3 = images.menu_button3aux
 
         pygame.display.update()
         clock.tick(60)

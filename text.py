@@ -3,9 +3,10 @@ SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+ff = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\font\Reboot.ttf')
 
 def textinicial(msg, cor, tamf, x, y):
-    fontfinal = pygame.font.Font('Reboot.ttf', tamf)
+    fontfinal = pygame.font.Font(ff, tamf)
     text0 = fontfinal.render(msg, True, cor)
     screen.blit(text0, [x, y])
 

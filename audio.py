@@ -5,17 +5,28 @@ from pygame import mixer
 
 mixer.init()
 
-jump_fx = pygame.mixer.Sound('assets/sounds/Jump.wav')
+jfx = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\Jump.wav')
+jump_fx = pygame.mixer.Sound(jfx)
 jump_fx.set_volume(0.5)
-death_fx = pygame.mixer.Sound('assets/sounds/gameover_loud.mp3')
+
+dfx = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\gameover_loud.wav')
+death_fx = pygame.mixer.Sound(dfx)
 death_fx.set_volume(0.5)
-introMusic = pygame.mixer.Sound('Assets/sounds/musics/Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+
+im = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\musics\Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+introMusic = pygame.mixer.Sound(im)
 introMusic.set_volume(0.3)
-iniciarButton = pygame.mixer.Sound('assets/sounds/Execute_02.ogg')
+
+ib = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\Execute_02.ogg')
+iniciarButton = pygame.mixer.Sound(ib)
 iniciarButton.set_volume(0.3)
-creditosButton = pygame.mixer.Sound('assets/sounds/Bleep_05.ogg')
+
+cb = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\Bleep_05.ogg')
+creditosButton = pygame.mixer.Sound(cb)
 creditosButton.set_volume(0.3)
-points = pygame.mixer.Sound('assets/sounds/1up1.wav')
+
+ps = open(r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\1up1.wav')
+points = pygame.mixer.Sound(ps)
 points.set_volume(0.5)
 
 

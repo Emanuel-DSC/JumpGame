@@ -355,8 +355,8 @@ while run:
             platform = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT - 50, 100, False)
             platform_group.add(platform)
             # reseta cor do checkpoint
-            green_line = pygame.image.load('assets/bg/1.png').convert_alpha()
-            purple_line = pygame.image.load('assets/bg/2.png').convert_alpha()
+            green_line = images.green_line
+            purple_line = images.purple_line
             # reseta musica
             audio.radio()
 

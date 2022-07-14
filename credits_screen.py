@@ -1,11 +1,13 @@
 import pygame
 import images
+import text
+from sys import exit
 import first_screen
 
 pygame.font.init()
 
-textMenu = pygame.font.Font('assets/menu/spaceship2100.ttf', 42)
-textMenu2 = pygame.font.Font('assets/menu/spaceship2100.ttf', 56)
+textMenu = pygame.font.Font(text.ff, 42)
+textMenu2 = pygame.font.Font(text.ff, 56)
 font_normal = pygame.font.SysFont('Lucida Sans', 20)
 font_small = pygame.font.SysFont('Lucida Sans', 15)
 
@@ -30,7 +32,9 @@ def credits_menu():
 
     intro = True
     pygame.mixer.init()
-    pygame.mixer.music.load('Assets/sounds/musics/Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+    im = open(
+        r'C:\Users\manu_\PycharmProjects\JumpGame\Assets\sounds\musics\Of Far Different Nature - 0 to 100 (CC-BY).ogg')
+    pygame.mixer.music.load(im)
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.2)
 
@@ -41,7 +45,7 @@ def credits_menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                quit()
+                exit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
