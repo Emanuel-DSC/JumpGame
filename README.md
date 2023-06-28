@@ -1,5 +1,5 @@
 # JumpGame
-2021 College's project - Game programming
+2021 College's project - Game Lab (Python)
 
 * Video demo 
 
