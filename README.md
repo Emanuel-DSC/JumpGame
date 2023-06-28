@@ -1,5 +1,6 @@
-# JumpGame
-2021 College's project - Game Lab (Python)
+# JumpGame - 2021 College's project 
+
+I had to code a game for my final exam of Game Lab (Python) course. So I took inspiration of Doodle Jump and made this game.
 
 * Video demo 
 
